@@ -68,6 +68,7 @@
     "awesome-typescript-loader": "^5.2.0",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
+    "git-cz": "^1.7.1",
     "jest": "^23.5.0",
     "peer-deps-externals-webpack-plugin": "^1.0.4",
     "react": "^16.4.2",
