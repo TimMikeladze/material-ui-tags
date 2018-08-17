@@ -1,6 +1,9 @@
 # material-ui-tags
 
-[](View a demo).
+[View a  Storybook demo](http://mikeladze.io/material-ui-tags/?selectedKind=ChipTags&selectedStory=example&full=0&addons=1&stories=1&panelRight=0)
+
+![demo](static/demo.gif)
+
 
 Opinionated React components built on top of `@material-ui/core` for handling tags (sometimes known as labels).
 
@@ -15,34 +18,30 @@ import { ChipTags } from 'material-ui-tags'
 const App = () =>
   <div>
     <ChipTags
-      tags={tags}
+      tags={[
+        {
+          id: 'feature',
+          title: 'Feature',
+          description: 'A new feature',
+          checked: true,
+        },
+        {
+          id: 'bug',
+          title: 'Bug',
+          description: 'This is a bug',
+        },
+        {
+          id: 'question',
+          title: 'Question',
+          description: 'This is a question',
+        },
+        {
+          id: 'breaking-change',
+          title: 'Breaking change',
+          description: 'A breaking change',
+          checked: true,
+        },
+      ]}
     />
   </div>
-
-const tags = [
-  {
-    id: 'feature',
-    title: 'Feature',
-    description: 'A new feature',
-    checked: true,
-  },
-  {
-    id: 'bug',
-    title: 'Bug',
-    description: 'This is a bug',
-  },
-  {
-    id: 'question',
-    title: 'Question',
-    description: 'This is a question',
-  },
-  {
-    id: 'breaking-change',
-    title: 'Breaking change',
-    description: 'A breaking change',
-    checked: true,
-  },
-];
-
-
 ```
