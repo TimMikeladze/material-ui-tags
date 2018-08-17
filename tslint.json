@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "@intelight/tslint"
+  ],
+  "rules": {
+    "no-implicit-dependencies": false,
+    "class-name": false
+  }
+}
