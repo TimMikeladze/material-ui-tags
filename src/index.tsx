@@ -84,6 +84,7 @@ export const ChipTags: React.SFC<any> = compose(
       },
       handleMenuClosed: (state) => () => {
         return {
+          searchValue: '',
           menuOpen: false,
           menuAnchorElement: null,
         };
