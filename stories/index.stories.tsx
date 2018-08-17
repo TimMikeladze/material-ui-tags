@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
 import { storiesOf } from '@storybook/react';
 
 import { ChipTags } from '../src';
@@ -32,15 +30,14 @@ const tags = [
 ];
 
 storiesOf('ChipTags', module)
-  .add('default', () => <ChipTags />)
-  .add('custom label', () => <ChipTags
-    rootChipProps={{
-      label: 'Add label',
-    }}
-  />)
-  .add('blurb', () => <ChipTags
-    blurb='Please add a tag.'
-  />)
-  .add('tags', () => <ChipTags
+  .add('example', () => <ChipTags
     tags={tags}
+  />)
+  .add('tag creation disabled', () => <ChipTags
+    tags={tags}
+    disableCreate
+  />)
+  .add('with blurb', () => <ChipTags
+    tags={tags}
+    blurb='Please add a tag.'
   />);

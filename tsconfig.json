@@ -8,7 +8,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "noUnusedLocals": false,
+    "noUnusedLocals": true,
     "module": "es2015",
     "moduleResolution": "node",
     "lib": [

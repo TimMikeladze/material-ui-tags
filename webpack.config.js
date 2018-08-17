@@ -1,14 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
+const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
 
 
 module.exports = () => ({
-  entry: './src/index.ts',
+  entry: './src/index.tsx',
   devtool: 'source-map',
   output: {
     path: path.resolve('./lib'),
     libraryTarget: 'umd',
-    library: '@intelight/map-dashboard',
+    library: 'material-ui-tags',
     filename: "index.js",
     umdNamedDefine: true
   },
@@ -39,4 +40,7 @@ module.exports = () => ({
       path.resolve('./src')
     ],
   },
+  plugins: [
+    new PeerDepsExternalsPlugin()
+  ]
 });
