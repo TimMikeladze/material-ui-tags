@@ -1,0 +1,74 @@
+{
+  "name": "material-ui-tags",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimMikeladze/material-ui-tags.git"
+  },
+  "author": "Tim Mikeladze <tim.mikeladze@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "main": "lib/index.js",
+  "scripts": {
+    "build:watch": "rimraf lib; webpack --progress --colors --watch --mode=development",
+    "build": "rimraf lib; webpack --progress --colors --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "test:watch": "jest --watch",
+    "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
+    "lint": "tslint --fix --project ./tsconfig.json '{src,test}/**/*.{ts,tsx}'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "<rootDir>/test/**/?(*.)(test).(ts|js)?(x)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "collectCoverageFrom": [
+      "test/**/*.{js,jsx,ts,tsx}"
+    ]
+  },
+  "dependencies": {
+    "@material-ui/core": "^1.5.0",
+    "@material-ui/icons": "^2.0.2",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.10",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "devDependencies": {
+    "@intelight/tslint": "^0.0.9",
+    "@storybook/addon-actions": "4.0.0-alpha.3",
+    "@storybook/addon-info": "4.0.0-alpha.3",
+    "@storybook/addon-links": "4.0.0-alpha.3",
+    "@storybook/addons": "4.0.0-alpha.3",
+    "@storybook/react": "4.0.0-alpha.3",
+    "@types/jest": "^23.3.1",
+    "@types/node": "^10.7.1",
+    "awesome-typescript-loader": "^5.2.0",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "jest": "^23.5.0",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.1.3",
+    "ts-loader": "^4.4.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.1",
+    "url-loader": "^1.1.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  }
+}

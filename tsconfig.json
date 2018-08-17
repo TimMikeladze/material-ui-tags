@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib/",
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "lib": [
+      "es2015",
+      "es2016",
+      "es2017",
+      "dom"
+    ],
+    "jsx": "react",
+    "baseUrl": "./src",
+    "rootDirs": [
+      "src",
+      "stories"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "lib"
+  ],
+  "types": [
+    "typePatches",
+    "node",
+    "webpack-env"
+  ]
+}
