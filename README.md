@@ -1,5 +1,7 @@
 # material-ui-tags
 
+[![CircleCI](https://circleci.com/gh/TimMikeladze/material-ui-tags.svg?style=svg)](https://circleci.com/gh/TimMikeladze/material-ui-tags)
+
 [View a  Storybook demo](http://mikeladze.io/material-ui-tags/?selectedKind=ChipTags&selectedStory=example&full=0&addons=1&stories=1&panelRight=0)
 
 ![demo](static/demo.gif)

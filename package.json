@@ -13,9 +13,8 @@
   "scripts": {
     "build:watch": "rimraf lib; webpack --progress --colors --watch --mode=development",
     "build": "rimraf lib; webpack --progress --colors --mode=production",
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "npm run lint && echo \"Error: no test specified\" && exit 0 && npm run build",
     "test:watch": "jest --watch",
-    "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
     "lint": "tslint --fix --project ./tsconfig.json '{src,test}/**/*.{ts,tsx}'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
