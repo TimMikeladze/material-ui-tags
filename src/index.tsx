@@ -1,9 +1,7 @@
 import Checkbox from '@material-ui/core/Checkbox';
 import Chip from '@material-ui/core/Chip';
-// import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import IconButton from '@material-ui/core/IconButton';
-// import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -57,6 +55,7 @@ const styles: StyleRulesCallback = (theme) => ({
     marginLeft: theme.spacing.unit * 3,
     marginRight: theme.spacing.unit * 3,
     marginBottom: theme.spacing.unit,
+    marginTop: theme.spacing.unit,
   },
   create: {
     display: 'flex',
@@ -93,13 +92,15 @@ export const ChipTags: React.SFC<any> = compose(
       handleTagClicked: (state, props) => (tag, checked) => {
         const modifiedTagIndex = state.tags.findIndex((t) => t.id === tag.id);
 
-        state.tags.splice(modifiedTagIndex, 1, {
+        const tags = [...state.tags];
+
+        tags.splice(modifiedTagIndex, 1, {
           ...tag,
           checked: checked === undefined ? !tag.checked : !!checked,
         });
 
         return {
-          tags: [...state.tags],
+          tags,
         };
       },
       handleSearchValueChanged: (state, props) => (e) => {
@@ -136,8 +137,10 @@ export const ChipTags: React.SFC<any> = compose(
     handleCreate,
     disableCreate,
     menuAnchorElement,
+    className,
+    disableAdd,
   }) => (
-      <div className={classes.root}>
+      <div className={classNames(className, classes.root)}>
         <div className={classes.blurb}>
           {blurb && <Typography className={classes.blurb} variant='caption'>{blurb}</Typography>}
         </div>
@@ -166,7 +169,15 @@ export const ChipTags: React.SFC<any> = compose(
           }
         </div>
         {menuOpen &&
-          <Menu anchorEl={menuAnchorElement} open={menuOpen} onClose={handleMenuClosed} disableAutoFocusItem>
+          <Menu
+            disableAutoFocusItem
+            MenuListProps={{
+              disablePadding: true,
+            }}
+            anchorEl={menuAnchorElement}
+            open={menuOpen}
+            onClose={handleMenuClosed}
+          >
             <div className={classes.menu}>
               <FormControl className={classes.formControl}>
                 <InputLabel className={classes.inputLabel} htmlFor='search'>Enter a tag</InputLabel>
