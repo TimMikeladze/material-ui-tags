@@ -135,6 +135,7 @@ export const ChipTags: React.SFC<any> = compose(
     minStringScore,
     handleCreate,
     disableCreate,
+    menuAnchorElement,
   }) => (
       <div className={classes.root}>
         <div className={classes.blurb}>
@@ -165,7 +166,7 @@ export const ChipTags: React.SFC<any> = compose(
           }
         </div>
         {menuOpen &&
-          <Menu open={menuOpen} onClose={handleMenuClosed} disableAutoFocusItem>
+          <Menu anchorEl={menuAnchorElement} open={menuOpen} onClose={handleMenuClosed} disableAutoFocusItem>
             <div className={classes.menu}>
               <FormControl className={classes.formControl}>
                 <InputLabel className={classes.inputLabel} htmlFor='search'>Enter a tag</InputLabel>
